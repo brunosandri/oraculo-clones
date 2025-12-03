@@ -8,7 +8,7 @@ import {
 import { CLONES_DETAIL } from "./data/clonesData";
 
 // --- COMPONENTE PRINCIPAL ---
-export default function CloneDetail({ cloneId, onBack }: { cloneId: string, onBack: () => void }) {
+export default function CloneDetail({ cloneId, onBack, onViewCognitiveMap }: { cloneId: string, onBack: () => void, onViewCognitiveMap?: (id: string) => void }) {
   const cloneData = CLONES_DETAIL[cloneId];
   const [activeTab, setActiveTab] = useState("skills");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,6 +49,14 @@ export default function CloneDetail({ cloneId, onBack }: { cloneId: string, onBa
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          {onViewCognitiveMap && cloneId === 'jobs' && (
+            <button
+              onClick={() => onViewCognitiveMap(cloneId)}
+              className="flex items-center gap-2 px-4 py-2 rounded-md border border-purple-500/30 bg-purple-500/10 text-xs font-mono uppercase hover:bg-purple-500/20 transition text-purple-300"
+            >
+              <Network size={14} /> Cognitive Map
+            </button>
+          )}
           <button className="flex items-center gap-2 px-4 py-2 rounded-md border border-white/10 text-xs font-mono uppercase hover:bg-white/5 transition">
             <Share2 size={14} /> Share
           </button>
