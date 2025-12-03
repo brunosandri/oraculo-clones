@@ -123,6 +123,25 @@ export default function CloneDetail({ cloneId, onBack, onViewCognitiveMap }: { c
             </div>
           </div>
 
+          {/* Cognitive Map Button */}
+          {onViewCognitiveMap && cloneId === 'jobs' && (
+            <button
+              onClick={() => onViewCognitiveMap(cloneId)}
+              className="glass rounded-xl p-4 hover:bg-white/5 transition group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20 group-hover:bg-purple-500/20 transition">
+                  <Network size={20} className="text-purple-400" />
+                </div>
+                <div className="flex-1 text-left">
+                  <h3 className="font-mono text-sm font-bold text-white uppercase tracking-wider">Cognitive Map</h3>
+                  <p className="text-xs text-gray-400 mt-0.5">Explore mental topology</p>
+                </div>
+                <div className="text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">→</div>
+              </div>
+            </button>
+          )}
+
           {/* Telemetry */}
           <div className="hidden lg:block glass rounded-xl p-6 space-y-5">
              <div className="flex items-center justify-between border-b border-white/5 pb-3">
