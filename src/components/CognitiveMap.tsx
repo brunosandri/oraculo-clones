@@ -1,7 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
 import ReactFlow, {
-  Node,
-  Edge,
   Controls,
   Background,
   useNodesState,
@@ -9,6 +7,7 @@ import ReactFlow, {
   MarkerType,
   Position,
 } from 'reactflow';
+import type { Node, Edge } from 'reactflow';
 import 'reactflow/dist/style.css';
 import type { CognitiveMapData, PlaceCell, GridCell } from '../data/cognitiveMapTypes';
 
@@ -103,8 +102,8 @@ export default function CognitiveMap({ data }: CognitiveMapProps) {
     }));
   }, [data.gridCells]);
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
   const onNodeClick = useCallback((_event: React.MouseEvent, node: Node) => {
     const placeCell = data.placeCells.find(pc => pc.id === node.id);

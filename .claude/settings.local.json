@@ -8,7 +8,10 @@
       "Bash(git push:*)",
       "Bash(npm install:*)",
       "Bash(timeout:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Cognitive Map visualization for Steve Jobs\n\nImplemented interactive cognitive map visualization based on Behrens et al. (2018) framework:\n\nFeatures:\n- Interactive graph visualization using React Flow\n- 12 Place Cells (core conceptual anchors)\n- 12 Grid Cells (connections between concepts)\n- 5 Border Cells (cognitive boundaries)\n- 4 Vector Cells (directional trajectories)\n- 4 Cognitive Modules (functional clusters)\n- Real-time node and edge details on click\n- Color-coded by concept level and connection type\n- Structural metrics display (Small-World Index, Clustering, etc.)\n\nTechnical Implementation:\n- Created TypeScript types for cognitive map data structure\n- Built CognitiveMap component with React Flow\n- Added navigation from Clone Detail page\n- Steve Jobs cognitive map fully implemented with 89% confidence\n- Extensible architecture for adding more clones\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(taskkill:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
